@@ -1,0 +1,25 @@
+{
+  "name": "@mithril/app-core",
+  "version": "0.1.0",
+  "description": "Shared, dependency-light building blocks for Mithril Desktop and app.mithril.fund: section definitions, locale resolution and the sync contract (types + schemas).",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "repository": { "type": "git", "url": "git+https://github.com/mithril-lang/mithril-app-core.git" },
+  "files": ["dist", "README.md", "LICENSE"],
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    "./sections": { "types": "./dist/sections.d.ts", "default": "./dist/sections.js" },
+    "./locale": { "types": "./dist/locale.d.ts", "default": "./dist/locale.js" },
+    "./sync": { "types": "./dist/sync.d.ts", "default": "./dist/sync.js" }
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": { "zod": "^4.6.5" },
+  "devDependencies": { "typescript": "~6.0.3", "vitest": "^5.0.2" },
+  "engines": { "node": ">=22" }
+}
